@@ -429,6 +429,114 @@
   .saving-title { font-size: 1.1rem; font-weight: 700; color: var(--green-light); margin-bottom: 10px; }
   .saving-text { font-size: 0.88rem; color: rgba(183,228,199,0.75); line-height: 1.7; font-weight: 300; }
 
+  /* ===== EVALUATION ===== */
+  #evaluation {
+    background: linear-gradient(145deg, #0a0a0a 0%, #111 40%, #0d1f16 100%);
+    position: relative; overflow: hidden;
+  }
+  #evaluation::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 80% 20%, rgba(82,183,136,0.08) 0%, transparent 55%),
+                radial-gradient(ellipse at 20% 80%, rgba(45,106,79,0.07) 0%, transparent 50%);
+  }
+  #evaluation .section-tag { color: var(--green-mint); }
+  #evaluation .section-title { color: var(--green-pale); }
+  .eval-subtitle {
+    color: rgba(183,228,199,0.6); font-size: 1rem; margin-top: 16px;
+    font-weight: 300; max-width: 600px; margin-left: auto; margin-right: auto;
+  }
+  .eval-wrapper {
+    display: grid; grid-template-columns: 1.1fr 1fr;
+    gap: 48px; max-width: 1050px; margin: 0 auto;
+    position: relative; z-index: 2; align-items: center;
+  }
+  .eval-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(82,183,136,0.25);
+    border-radius: 28px; padding: 50px 44px;
+    text-align: center;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.06);
+    transition: all 0.4s;
+  }
+  .eval-card:hover {
+    border-color: rgba(82,183,136,0.5);
+    box-shadow: 0 40px 100px rgba(0,0,0,0.6), 0 0 40px rgba(82,183,136,0.08);
+  }
+  .eval-icon-wrap {
+    width: 80px; height: 80px;
+    background: linear-gradient(135deg, rgba(82,183,136,0.2), rgba(45,106,79,0.3));
+    border: 1px solid rgba(82,183,136,0.3);
+    border-radius: 22px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2.2rem; margin: 0 auto 24px;
+  }
+  .eval-card-title {
+    font-size: 1.6rem; font-weight: 900; color: #fff;
+    margin-bottom: 14px; line-height: 1.3;
+  }
+  .eval-card-desc {
+    font-size: 0.93rem; color: rgba(183,228,199,0.65);
+    line-height: 1.8; font-weight: 300; margin-bottom: 32px;
+  }
+  .eval-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: linear-gradient(135deg, var(--green-light), var(--green-mid));
+    color: #fff; font-weight: 700; font-size: 1.05rem;
+    padding: 16px 40px; border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.35s;
+    box-shadow: 0 8px 30px rgba(82,183,136,0.35);
+    border: none; cursor: pointer;
+  }
+  .eval-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 50px rgba(82,183,136,0.5);
+    background: linear-gradient(135deg, var(--green-pale), var(--green-light));
+    color: var(--green-dark);
+  }
+  .eval-btn svg { transition: transform 0.3s; }
+  .eval-btn:hover svg { transform: translateX(-5px); }
+  .eval-stars-row {
+    display: flex; gap: 6px; justify-content: center;
+    margin-top: 28px; font-size: 1.5rem;
+    animation: starPulse 2.5s ease-in-out infinite;
+  }
+  @keyframes starPulse {
+    0%,100% { opacity: 0.7; }
+    50% { opacity: 1; }
+  }
+  .eval-note {
+    margin-top: 10px; font-size: 0.8rem;
+    color: rgba(149,213,178,0.45); font-weight: 300;
+  }
+  .eval-side { display: grid; gap: 20px; }
+  .eval-feature {
+    display: flex; gap: 18px; align-items: flex-start;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(82,183,136,0.15);
+    border-radius: 16px; padding: 22px 24px;
+    transition: all 0.3s;
+  }
+  .eval-feature:hover {
+    background: rgba(82,183,136,0.08);
+    border-color: rgba(82,183,136,0.3);
+    transform: translateX(-4px);
+  }
+  .eval-feat-icon {
+    font-size: 1.6rem; flex-shrink: 0;
+    width: 48px; height: 48px;
+    background: rgba(82,183,136,0.12); border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .eval-feature strong {
+    display: block; color: var(--green-pale); font-size: 1rem;
+    margin-bottom: 6px; font-weight: 700;
+  }
+  .eval-feature p {
+    font-size: 0.87rem; color: rgba(183,228,199,0.55);
+    font-weight: 300; line-height: 1.6; margin: 0;
+  }
+
   /* ===== FOOTER ===== */
   footer {
     background: #050f09;
@@ -481,6 +589,7 @@
     <li><a href="#bracelet">السوار</a></li>
     <li><a href="#story">قصة أمل</a></li>
     <li><a href="#future">المستقبل</a></li>
+    <li><a href="#evaluation" style="background:rgba(82,183,136,0.2); border-color:rgba(82,183,136,0.4);">⭐ التقييم</a></li>
   </ul>
 </nav>
 
@@ -738,6 +847,56 @@
   </div>
   <div class="impact-text fade-in">
     سيحول مجتمعنا إلى بيئة رقمية أكثر أماناً، حيث يساهم في تقليل نسب الوفيات الناتجة عن تأخر المعلومات الطبية. كما يعزز من جودة الحياة ويدعم التحول الرقمي الصحي في المملكة وفق <strong>رؤية 2030</strong>، مما يجعل رعاية الفئات الضعيفة أولوية ممكنة بالتقنية.
+  </div>
+</section>
+
+<!-- EVALUATION -->
+<section id="evaluation">
+  <div class="section-header fade-in">
+    <div class="section-tag">شاركنا رأيك</div>
+    <h2 class="section-title" style="color:var(--green-pale);">قيّم مشروع نبراس</h2>
+    <div class="section-line"></div>
+    <p class="eval-subtitle">آراؤكم تُلهمنا وتُساعدنا على التطوير المستمر — شاركنا تقييمك بضغطة واحدة</p>
+  </div>
+  <div class="eval-wrapper fade-in">
+    <div class="eval-card">
+      <div class="eval-icon-wrap">
+        <span class="eval-icon">⭐</span>
+      </div>
+      <h3 class="eval-card-title">هل أعجبك مشروع نبراس؟</h3>
+      <p class="eval-card-desc">سجّل تقييمك وأخبرنا برأيك في فكرة السوار الطبي الذكي ومدى إمكانية تطبيقه في مجتمعنا</p>
+      <a href="https://forms.cloud.microsoft/r/UMwDaUHsht?origin=lprLink" target="_blank" class="eval-btn">
+        <span>ابدأ التقييم الآن</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+      <div class="eval-stars-row">
+        <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+      </div>
+      <p class="eval-note">يستغرق التقييم أقل من دقيقة</p>
+    </div>
+    <div class="eval-side">
+      <div class="eval-feature fade-in">
+        <div class="eval-feat-icon">💡</div>
+        <div>
+          <strong>ساهم في التطوير</strong>
+          <p>ملاحظاتك تساعدنا على تحسين الفكرة وتطوير المشروع</p>
+        </div>
+      </div>
+      <div class="eval-feature fade-in">
+        <div class="eval-feat-icon">🤝</div>
+        <div>
+          <strong>رأيك يهمنا</strong>
+          <p>كل تقييم يمثل خطوة نحو خدمة صحية أفضل للمجتمع</p>
+        </div>
+      </div>
+      <div class="eval-feature fade-in">
+        <div class="eval-feat-icon">🚀</div>
+        <div>
+          <strong>ادعم الابتكار السعودي</strong>
+          <p>هذا المشروع جزء من رؤية 2030 نحو مجتمع رقمي أكثر أماناً</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
